@@ -15,6 +15,7 @@ namespace transformacionesEntrega1._1
         {
             this.pct = pct;
             bmp = new Bitmap(pct.Width, pct.Height);
+            Init();
 
         }
 
@@ -26,6 +27,11 @@ namespace transformacionesEntrega1._1
             pct.Invalidate();
         }
 
+        public void DrawPixel(int x, int y, Color color)
+        {
+            bmp.SetPixel(x, y, color);
+            pct.Invalidate();
+        }
 
         public void Render(Scene scene)
         {

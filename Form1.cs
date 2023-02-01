@@ -33,6 +33,7 @@ namespace transformacionesEntrega1._1
         private void Init()
         {
             scene = new Scene();
+            canvas = new Canvas(PCT_CANVAS);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,10 +46,20 @@ namespace transformacionesEntrega1._1
         {
             if (f != null)
             {
-                bmp.SetPixel(e.X, e.Y, Color.White);
+                canvas.DrawPixel(e.X, e.Y, Color.White);
                 f.Add(new PointF(e.X, e.Y));
             }
             else MessageBox.Show("Select a Figure First");
+        }
+
+        private void TIMER_Tick(object sender, EventArgs e)
+        {
+            canvas.Render(scene);
+        }
+
+        private void PCT_CANVAS_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

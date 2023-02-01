@@ -55,12 +55,20 @@
             // 
             // PCT_CANVAS
             // 
+            this.PCT_CANVAS.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.PCT_CANVAS.Location = new System.Drawing.Point(169, 12);
             this.PCT_CANVAS.Name = "PCT_CANVAS";
             this.PCT_CANVAS.Size = new System.Drawing.Size(619, 375);
             this.PCT_CANVAS.TabIndex = 2;
             this.PCT_CANVAS.TabStop = false;
+            this.PCT_CANVAS.Click += new System.EventHandler(this.PCT_CANVAS_Click);
             this.PCT_CANVAS.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseDoubleClick);
+            // 
+            // TIMER
+            // 
+            this.TIMER.Enabled = true;
+            this.TIMER.Interval = 40;
+            this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
             // 
             // Form1
             // 
