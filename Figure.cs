@@ -10,6 +10,7 @@ namespace transformacionesEntrega1._1
     {
         public List<PointF> Pts;
         public PointF Centroid, Last;
+        public Boolean moving = false;
 
         public Figure()
         {
@@ -30,6 +31,15 @@ namespace transformacionesEntrega1._1
 
             Centroid.X /= Pts.Count;
             Centroid.Y /= Pts.Count;
+        }
+
+        public void TranslatePoints(PointF a)
+        {
+            for (int p = 0; p < Pts.Count; p++)
+            {
+                Pts[p] = new PointF(Pts[p].X + a.X, Pts[p].Y + a.Y);
+            }
+            moving= true;
         }
     }
 }

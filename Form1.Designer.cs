@@ -52,6 +52,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(151, 375);
             this.treeView1.TabIndex = 1;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // PCT_CANVAS
             // 
@@ -61,8 +62,10 @@
             this.PCT_CANVAS.Size = new System.Drawing.Size(619, 375);
             this.PCT_CANVAS.TabIndex = 2;
             this.PCT_CANVAS.TabStop = false;
-            this.PCT_CANVAS.Click += new System.EventHandler(this.PCT_CANVAS_Click);
             this.PCT_CANVAS.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseDoubleClick);
+            this.PCT_CANVAS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseDown);
+            this.PCT_CANVAS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseMove);
+            this.PCT_CANVAS.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseUp);
             // 
             // TIMER
             // 
