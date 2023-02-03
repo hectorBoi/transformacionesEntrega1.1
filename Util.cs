@@ -42,11 +42,42 @@ namespace transformacionesEntrega1._1
 
         public static void RecenterCentroid(Figure f)
         {
+            f.Centroid = new Point(0, 0);
             for (int p = 0; p < f.Pts.Count; p++)
             {
                 f.Centroid.X += f.Pts[p].X;
                 f.Centroid.Y += f.Pts[p].Y;
             }
+            f.Centroid.X /= f.Pts.Count;
+            f.Centroid.Y /= f.Pts.Count;
         }
+
+        public static List<PointF> ToOrigin(List<PointF> outterbounds, PointF Centroid)
+        {
+            for (int p = 0; p < outterbounds.Count; p++)
+            {
+                outterbounds[p] = new PointF(outterbounds[p].X - Centroid.X, outterbounds[p].Y - Centroid.Y);
+            }
+            return outterbounds;
+        }
+
+        public static List<PointF> Translate(List<PointF> outterbounds, PointF a)
+        {
+            for (int p = 0; p < outterbounds.Count; p++)
+            {
+                outterbounds[p] = new PointF(outterbounds[p].X + a.X, outterbounds[p].Y + a.Y);
+            }
+            return outterbounds;
+        }
+
+        public static List<PointF> Scale(List<PointF> outterbounds, float value)
+        {
+            for (int p = 0; p < outterbounds.Count; p++)
+            {
+                outterbounds[p] = new PointF(outterbounds[p].X * value, outterbounds[p].Y * value);
+            }
+            return outterbounds;
+        }
+
     }
 }

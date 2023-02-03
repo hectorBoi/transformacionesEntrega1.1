@@ -16,7 +16,7 @@ namespace transformacionesEntrega1._1
         Figure f;
         Canvas canvas;
         Bitmap bmp;
-        Point mouse;
+        public static Point mouse;
         Boolean mouseDown = false;
         Boolean insideF = false;
         public Form1()
@@ -78,6 +78,7 @@ namespace transformacionesEntrega1._1
             Point mouse2 = e.Location;
             if (f != null)
             {
+
                 if (Util.IsPointInPolygon4(f.Pts.ToArray(), mouse2)){
                     Cursor.Current = Cursors.SizeAll;
                     if (mouseDown)
@@ -87,6 +88,7 @@ namespace transformacionesEntrega1._1
                         mouse.Y -= e.Y;
                         f.TranslatePoints(new Point(-mouse.X, -mouse.Y));
                         Util.RecenterCentroid(f);
+                        Util.Translate(f.OutterBounds, new Point(-mouse.X, -mouse.Y));
                         mouse = e.Location;
                     }
                 }

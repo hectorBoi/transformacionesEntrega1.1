@@ -38,12 +38,24 @@ namespace transformacionesEntrega1._1
             g.Clear(Color.Black);
             for (int f = 0; f < scene.Figures.Count; f++)
             {
+                for (int p = 0; p < scene.Figures[f].Pts.Count; p++)
+                {
+                    //Draws an Ellipse for each Point of the Figure f
+                    g.FillEllipse(Brushes.Violet, scene.Figures[f].Pts[p].X - 3, scene.Figures[f].Pts[p].Y - 3, 9, 9);
+
+                }
                 if (scene.Figures[f].Pts.Count > 1)
                 {
-                    g.FillPolygon(Brushes.DarkSlateGray, scene.Figures[f].Pts.ToArray());
+
+                    //Should Color the outterbounds
+                    g.FillPolygon(Brushes.DimGray, scene.Figures[f].OutterBounds.ToArray());
+                    //Draws the Figure F
+                    g.FillPolygon(Brushes.Lime, scene.Figures[f].Pts.ToArray());
                     g.DrawPolygon(Pens.Goldenrod, scene.Figures[f].Pts.ToArray());
-                    g.FillEllipse(Brushes.Violet, scene.Figures[f].Pts[scene.Figures[f].Pts.Count - 1].X - 3, scene.Figures[f].Pts[scene.Figures[f].Pts.Count - 1].Y - 3, 6, 6);
-                    g.FillEllipse(Brushes.Yellow, scene.Figures[f].Centroid.X - 3, scene.Figures[f].Centroid.Y - 3, 6, 6);//*/
+                    g.FillEllipse(Brushes.Violet, scene.Figures[f].Pts[scene.Figures[f].Pts.Count - 1].X - 3, scene.Figures[f].Pts[scene.Figures[f].Pts.Count - 1].Y - 3, 9, 9);
+                    g.FillEllipse(Brushes.Yellow, scene.Figures[f].Centroid.X, scene.Figures[f].Centroid.Y, 9, 9);//*/
+
+                    
                 }
             }
             pct.Invalidate();
