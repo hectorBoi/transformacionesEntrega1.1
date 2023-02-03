@@ -78,7 +78,10 @@ namespace transformacionesEntrega1._1
             Point mouse2 = e.Location;
             if (f != null)
             {
+                if (Util.IsPointInPolygon4(f.OutterBounds.ToArray(), mouse2))
+                {
 
+                }
                 if (Util.IsPointInPolygon4(f.Pts.ToArray(), mouse2)){
                     Cursor.Current = Cursors.SizeAll;
                     if (mouseDown)
