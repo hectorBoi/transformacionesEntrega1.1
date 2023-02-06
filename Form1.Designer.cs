@@ -33,6 +33,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.PCT_CANVAS = new System.Windows.Forms.PictureBox();
             this.TIMER = new System.Windows.Forms.Timer(this.components);
+            this.radiansLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PCT_CANVAS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             this.PCT_CANVAS.Size = new System.Drawing.Size(619, 375);
             this.PCT_CANVAS.TabIndex = 2;
             this.PCT_CANVAS.TabStop = false;
+            this.PCT_CANVAS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseClick);
             this.PCT_CANVAS.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseDoubleClick);
             this.PCT_CANVAS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseDown);
             this.PCT_CANVAS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PCT_CANVAS_MouseMove);
@@ -73,11 +75,21 @@
             this.TIMER.Interval = 40;
             this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
             // 
+            // radiansLabel
+            // 
+            this.radiansLabel.AutoSize = true;
+            this.radiansLabel.Location = new System.Drawing.Point(520, 401);
+            this.radiansLabel.Name = "radiansLabel";
+            this.radiansLabel.Size = new System.Drawing.Size(69, 25);
+            this.radiansLabel.TabIndex = 3;
+            this.radiansLabel.Text = "radians";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radiansLabel);
             this.Controls.Add(this.PCT_CANVAS);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.newFigureButton);
@@ -86,6 +98,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PCT_CANVAS)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +108,6 @@
         private TreeView treeView1;
         private PictureBox PCT_CANVAS;
         private System.Windows.Forms.Timer TIMER;
+        private Label radiansLabel;
     }
 }
