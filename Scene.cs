@@ -5,7 +5,7 @@ using System.Text;
 
 namespace transformacionesEntrega1._1
 {
-    internal class Scene
+    public class Scene
     {
         public List<Figure> Figures;
 

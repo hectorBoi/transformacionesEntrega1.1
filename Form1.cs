@@ -19,6 +19,7 @@ namespace transformacionesEntrega1._1
         Point mouse;
         PointF mouseStartPos;
         Boolean mouseDown = false;
+        Boolean insideF = false;
         public Form1()
         {
             InitializeComponent();
@@ -113,7 +114,7 @@ namespace transformacionesEntrega1._1
                             float radians = (float)Math.Acos((b * b + a * a - c * c) / (2 * a * b));
                             float angleDegree = (float)(radians / 57.2958);
 
-                            radiansLabel.Text = angleDegree.ToString();
+                            //radiansLabel.Text = angleDegree.ToString();
                         }
 
                     }
@@ -156,6 +157,20 @@ namespace transformacionesEntrega1._1
             mouse = e.Location;
             mouseDown = false;
             PCT_CANVAS.Select();
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            canvas = new Canvas(PCT_CANVAS);
+        }
+
+
+
+        
+
+        private void PCT_CANVAS_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

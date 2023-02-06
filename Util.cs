@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace transformacionesEntrega1._1
 {
-    internal class Util
+    public class Util
     {
         private static Util ins;
 

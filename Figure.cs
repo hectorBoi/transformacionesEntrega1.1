@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace transformacionesEntrega1._1
 {
-    internal class Figure
+    public class Figure
     {
         public List<PointF> Pts, OutterBounds;
         public PointF Centroid, Last;
