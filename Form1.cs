@@ -19,7 +19,6 @@ namespace transformacionesEntrega1._1
         Point mouse;
         PointF mouseStartPos;
         Boolean mouseDown = false;
-        Boolean insideF = false;
         public Form1()
         {
             InitializeComponent();
