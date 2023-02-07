@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.DirectoryServices;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace transformacionesEntrega1._1
 {
@@ -53,11 +52,25 @@ namespace transformacionesEntrega1._1
 
         }
 
+        public void Rotate(float angle)
+        {
+            for (int p = 0; p < Pts.Count; p++)
+                Pts[p] = Util.Ins.Rotate(Pts[p], angle);
+        }
+
+
         public void TranslateToOrigin()
         {
             for (int p = 0; p < Pts.Count; p++)
             {
                 Pts[p] = new PointF(Pts[p].X - Centroid.X, Pts[p].Y - Centroid.Y);
+            }
+        }
+        public void Scale(float value)
+        {
+            for (int p = 0; p < Pts.Count; p++)
+            {
+                Pts[p] = new PointF(Pts[p].X * value, Pts[p].Y * value);
             }
         }
 
@@ -66,5 +79,6 @@ namespace transformacionesEntrega1._1
 
             OutterBounds = Util.Translate(OutterBounds, Centroid);
         }
+       
     }
 }

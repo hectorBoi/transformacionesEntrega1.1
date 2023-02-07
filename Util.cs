@@ -78,6 +78,22 @@ namespace transformacionesEntrega1._1
             }
             return outterbounds;
         }
+        public PointF Rotate(PointF a, float angle)
+        {
+            if (angle > 360)
+                angle = 360;
+
+            if (angle < -360)
+                angle = 0;
+
+            PointF c = new PointF();
+            angle = angle / 57.2958f;
+
+            c.X = (float)((a.X * Math.Cos(angle)) - (a.Y * Math.Sin(angle)));
+            c.Y = (float)((a.X * Math.Sin(angle)) + (a.Y * Math.Cos(angle)));
+
+            return c;
+        }
 
     }
 }
