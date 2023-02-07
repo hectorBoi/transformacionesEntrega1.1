@@ -38,7 +38,7 @@ namespace transformacionesEntrega1._1
 
             Centroid.X /= Pts.Count;
             Centroid.Y /= Pts.Count;
-            
+
             OutterBounds = Util.ToOrigin(OutterBounds, Centroid);
             OutterBounds = Util.Scale(OutterBounds, (float)1.2);
             OutterBounds = Util.Translate(OutterBounds, Centroid);

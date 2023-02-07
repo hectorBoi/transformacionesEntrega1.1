@@ -5,8 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Windows.Forms;
+
 
 namespace transformacionesEntrega1._1
 {
@@ -16,10 +18,12 @@ namespace transformacionesEntrega1._1
         Figure f;
         Canvas canvas;
         Bitmap bmp;
-        Point mouse;
+        Point mouse, mouse2;
         PointF mouseStartPos;
         Boolean mouseDown = false;
         Boolean insideF = false;
+        float[] corX;
+        float[] corY;
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +36,7 @@ namespace transformacionesEntrega1._1
             scene.Figures.Add(f);
             TreeNode node = new TreeNode("Fig." + (treeView1.Nodes.Count + 1));
             node.Tag = f;
-            treeView1.Nodes.Add(node);
+            treeView1.Nodes.Add(node); ;
         }
 
         private void Init()
@@ -53,6 +57,8 @@ namespace transformacionesEntrega1._1
             {
                 canvas.DrawPixel(e.X, e.Y, Color.White);
                 f.Add(new PointF(e.X, e.Y));
+
+                
             }
             else MessageBox.Show("Select a Figure First");
         }
@@ -125,13 +131,16 @@ namespace transformacionesEntrega1._1
                     Cursor.Current = Cursors.Default;
                 }
             }
+            float mouseXloc = mouse2.X;
+            float mouseYloc = mouse2.Y;
+            mouseX.Text = string.Format("X: {0:0}", mouseXloc);
+            mouseY.Text = string.Format("Y: {0:0}", mouseYloc);
 
         }
 
         private void PCT_CANVAS_MouseDown(object sender, MouseEventArgs e)
         {
             mouse = e.Location;
-            
             mouseDown= true;
 
         }
@@ -164,11 +173,75 @@ namespace transformacionesEntrega1._1
             canvas = new Canvas(PCT_CANVAS);
         }
 
-
-
-        
-
         private void PCT_CANVAS_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        public void startRecording_Click(object sender, EventArgs e)
+        {
+            /*
+             * By pressing this button, the timer will start (which will last a bout 3 seconds)
+             * it will record all the data of the movement, storing it in certain arrays with locations, movements, etc
+             * and then will stop after timer runs out
+             * The data will then be stored in a tree and by pressing the play recording it will be ale to simulate 
+             * and run the data obtained.
+             * This is how its going to work but we need to learn how to implement it
+             */
+
+            TIMER2.Start();
+            
+
+            
+           if (f != null)
+            {
+                //f.TranslatePoints(f.Centroid);
+                corX = new float[TIMER2.Interval];
+                corY = new float[TIMER2.Interval];
+                for (int i = 0; i < TIMER2.Interval; i++)
+                {
+                    corX[i] = mouse2.X;
+                    corY[i] = mouse2.Y;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Choose a figure");
+            } 
+
+
+            
+            
+        }
+
+        private void playRecording_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < TIMER2.Interval; i++)
+            {
+                canvas.DrawPixel((int)corX[i], (int)corY[i], Color.White);
+                f.Add(new PointF((int)corX[i], (int)corY[i]));
+            }
+
+        }
+
+        private void PCT_CANVAS_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimerLabel_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TIMER2_Tick(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void mouseX_Click(object sender, EventArgs e)
         {
 
         }
