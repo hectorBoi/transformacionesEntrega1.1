@@ -264,7 +264,7 @@ namespace transformacionesEntrega1._1
 
 
                     count[i] = i;
-                    label1.Text = string.Format("Time: {0:0}", count[i]);
+                    label1.Text = string.Format("Timer: {0:0}", count[i]);
                     label1.Refresh();
                 }
             }

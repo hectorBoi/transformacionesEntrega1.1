@@ -63,7 +63,7 @@
             this.newFigureButton.BackColor = System.Drawing.Color.White;
             this.newFigureButton.FlatAppearance.BorderSize = 0;
             this.newFigureButton.ForeColor = System.Drawing.Color.Black;
-            this.newFigureButton.Location = new System.Drawing.Point(5, 308);
+            this.newFigureButton.Location = new System.Drawing.Point(5, 205);
             this.newFigureButton.Name = "newFigureButton";
             this.newFigureButton.Size = new System.Drawing.Size(85, 36);
             this.newFigureButton.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.treeView1.LineColor = System.Drawing.Color.White;
             this.treeView1.Location = new System.Drawing.Point(5, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(85, 299);
+            this.treeView1.Size = new System.Drawing.Size(85, 196);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -93,7 +93,7 @@
             this.PCT_CANVAS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.PCT_CANVAS.Location = new System.Drawing.Point(99, 9);
             this.PCT_CANVAS.Name = "PCT_CANVAS";
-            this.PCT_CANVAS.Size = new System.Drawing.Size(557, 357);
+            this.PCT_CANVAS.Size = new System.Drawing.Size(426, 254);
             this.PCT_CANVAS.TabIndex = 2;
             this.PCT_CANVAS.TabStop = false;
             this.PCT_CANVAS.Click += new System.EventHandler(this.PCT_CANVAS_Click_1);
@@ -115,7 +115,7 @@
             this.StartRecording.BackColor = System.Drawing.Color.Firebrick;
             this.StartRecording.FlatAppearance.BorderSize = 0;
             this.StartRecording.ForeColor = System.Drawing.Color.Black;
-            this.StartRecording.Location = new System.Drawing.Point(5, 350);
+            this.StartRecording.Location = new System.Drawing.Point(5, 247);
             this.StartRecording.Name = "StartRecording";
             this.StartRecording.Size = new System.Drawing.Size(85, 34);
             this.StartRecording.TabIndex = 1;
@@ -131,9 +131,9 @@
             // PCT_SLIDER_Y
             // 
             this.PCT_SLIDER_Y.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.PCT_SLIDER_Y.Location = new System.Drawing.Point(19, -81);
+            this.PCT_SLIDER_Y.Location = new System.Drawing.Point(19, -248);
             this.PCT_SLIDER_Y.Name = "PCT_SLIDER_Y";
-            this.PCT_SLIDER_Y.Size = new System.Drawing.Size(32, 556);
+            this.PCT_SLIDER_Y.Size = new System.Drawing.Size(32, 858);
             this.PCT_SLIDER_Y.TabIndex = 0;
             this.PCT_SLIDER_Y.TabStop = false;
             this.PCT_SLIDER_Y.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_Y_MouseDown);
@@ -149,7 +149,7 @@
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(93, 440);
+            this.LeftPanel.Size = new System.Drawing.Size(93, 337);
             this.LeftPanel.TabIndex = 7;
             // 
             // PlayRecording
@@ -158,7 +158,7 @@
             this.PlayRecording.BackColor = System.Drawing.Color.Green;
             this.PlayRecording.FlatAppearance.BorderSize = 0;
             this.PlayRecording.ForeColor = System.Drawing.Color.Black;
-            this.PlayRecording.Location = new System.Drawing.Point(3, 390);
+            this.PlayRecording.Location = new System.Drawing.Point(3, 287);
             this.PlayRecording.Name = "PlayRecording";
             this.PlayRecording.Size = new System.Drawing.Size(85, 34);
             this.PlayRecording.TabIndex = 1;
@@ -168,9 +168,9 @@
             // 
             // PCT_SLIDER_X
             // 
-            this.PCT_SLIDER_X.Location = new System.Drawing.Point(-297, 6);
+            this.PCT_SLIDER_X.Location = new System.Drawing.Point(-526, 3);
             this.PCT_SLIDER_X.Name = "PCT_SLIDER_X";
-            this.PCT_SLIDER_X.Size = new System.Drawing.Size(1119, 22);
+            this.PCT_SLIDER_X.Size = new System.Drawing.Size(1707, 22);
             this.PCT_SLIDER_X.TabIndex = 0;
             this.PCT_SLIDER_X.TabStop = false;
             this.PCT_SLIDER_X.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_X_MouseDown);
@@ -182,9 +182,9 @@
             this.MiddlePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MiddlePanel.Controls.Add(this.PCT_SLIDER_X);
-            this.MiddlePanel.Location = new System.Drawing.Point(99, 372);
+            this.MiddlePanel.Location = new System.Drawing.Point(99, 269);
             this.MiddlePanel.Name = "MiddlePanel";
-            this.MiddlePanel.Size = new System.Drawing.Size(560, 31);
+            this.MiddlePanel.Size = new System.Drawing.Size(429, 31);
             this.MiddlePanel.TabIndex = 9;
             // 
             // BottomPanel
@@ -193,15 +193,16 @@
             this.BottomPanel.Controls.Add(this.mouseY);
             this.BottomPanel.Controls.Add(this.mouseX);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(93, 409);
+            this.BottomPanel.Location = new System.Drawing.Point(93, 306);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(632, 31);
+            this.BottomPanel.Size = new System.Drawing.Size(501, 31);
             this.BottomPanel.TabIndex = 10;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(525, 11);
+            this.label1.Location = new System.Drawing.Point(423, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 15);
             this.label1.TabIndex = 2;
@@ -209,6 +210,7 @@
             // 
             // mouseY
             // 
+            this.mouseY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.mouseY.AutoSize = true;
             this.mouseY.Location = new System.Drawing.Point(90, 11);
             this.mouseY.Name = "mouseY";
@@ -218,6 +220,7 @@
             // 
             // mouseX
             // 
+            this.mouseX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.mouseX.AutoSize = true;
             this.mouseX.Location = new System.Drawing.Point(6, 11);
             this.mouseX.Name = "mouseX";
@@ -229,9 +232,9 @@
             // 
             this.RightPanel.Controls.Add(this.PCT_SLIDER_Y);
             this.RightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RightPanel.Location = new System.Drawing.Point(662, 0);
+            this.RightPanel.Location = new System.Drawing.Point(531, 0);
             this.RightPanel.Name = "RightPanel";
-            this.RightPanel.Size = new System.Drawing.Size(63, 409);
+            this.RightPanel.Size = new System.Drawing.Size(63, 306);
             this.RightPanel.TabIndex = 11;
             // 
             // TIMER3
@@ -244,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(725, 440);
+            this.ClientSize = new System.Drawing.Size(594, 337);
             this.Controls.Add(this.RightPanel);
             this.Controls.Add(this.BottomPanel);
             this.Controls.Add(this.MiddlePanel);
