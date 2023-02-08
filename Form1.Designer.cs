@@ -33,7 +33,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.PCT_CANVAS = new System.Windows.Forms.PictureBox();
             this.TIMER = new System.Windows.Forms.Timer(this.components);
-            this.startRecording = new System.Windows.Forms.Button();
+            this.StartRecording = new System.Windows.Forms.Button();
             this.TIMER2 = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.PCT_SLIDER_Y = new System.Windows.Forms.PictureBox();
@@ -42,13 +42,18 @@
             this.PCT_SLIDER_X = new System.Windows.Forms.PictureBox();
             this.MiddlePanel = new System.Windows.Forms.Panel();
             this.BottomPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mouseY = new System.Windows.Forms.Label();
+            this.mouseX = new System.Windows.Forms.Label();
             this.RightPanel = new System.Windows.Forms.Panel();
+            this.TIMER3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PCT_CANVAS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCT_SLIDER_Y)).BeginInit();
             this.LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCT_SLIDER_X)).BeginInit();
             this.MiddlePanel.SuspendLayout();
+            this.BottomPanel.SuspendLayout();
             this.RightPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,19 +109,19 @@
             this.TIMER.Interval = 40;
             this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
             // 
-            // startRecording
+            // StartRecording
             // 
-            this.startRecording.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startRecording.BackColor = System.Drawing.Color.Firebrick;
-            this.startRecording.FlatAppearance.BorderSize = 0;
-            this.startRecording.ForeColor = System.Drawing.Color.Black;
-            this.startRecording.Location = new System.Drawing.Point(5, 350);
-            this.startRecording.Name = "startRecording";
-            this.startRecording.Size = new System.Drawing.Size(85, 34);
-            this.startRecording.TabIndex = 1;
-            this.startRecording.Text = "Record";
-            this.startRecording.UseVisualStyleBackColor = false;
-            this.startRecording.Click += new System.EventHandler(this.startRecording_Click);
+            this.StartRecording.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.StartRecording.BackColor = System.Drawing.Color.Firebrick;
+            this.StartRecording.FlatAppearance.BorderSize = 0;
+            this.StartRecording.ForeColor = System.Drawing.Color.Black;
+            this.StartRecording.Location = new System.Drawing.Point(5, 350);
+            this.StartRecording.Name = "StartRecording";
+            this.StartRecording.Size = new System.Drawing.Size(85, 34);
+            this.StartRecording.TabIndex = 1;
+            this.StartRecording.Text = "Record";
+            this.StartRecording.UseVisualStyleBackColor = false;
+            this.StartRecording.Click += new System.EventHandler(this.StartRecording_Click);
             // 
             // TIMER2
             // 
@@ -131,7 +136,6 @@
             this.PCT_SLIDER_Y.Size = new System.Drawing.Size(32, 556);
             this.PCT_SLIDER_Y.TabIndex = 0;
             this.PCT_SLIDER_Y.TabStop = false;
-            this.PCT_SLIDER_Y.Click += new System.EventHandler(this.PCT_SLIDER_Y_Click);
             this.PCT_SLIDER_Y.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_Y_MouseDown);
             this.PCT_SLIDER_Y.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_Y_MouseMove);
             this.PCT_SLIDER_Y.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_Y_MouseUp);
@@ -140,7 +144,7 @@
             // 
             this.LeftPanel.Controls.Add(this.PlayRecording);
             this.LeftPanel.Controls.Add(this.newFigureButton);
-            this.LeftPanel.Controls.Add(this.startRecording);
+            this.LeftPanel.Controls.Add(this.StartRecording);
             this.LeftPanel.Controls.Add(this.treeView1);
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
@@ -160,6 +164,7 @@
             this.PlayRecording.TabIndex = 1;
             this.PlayRecording.Text = "Play";
             this.PlayRecording.UseVisualStyleBackColor = false;
+            this.PlayRecording.Click += new System.EventHandler(this.PlayRecording_Click);
             // 
             // PCT_SLIDER_X
             // 
@@ -168,7 +173,6 @@
             this.PCT_SLIDER_X.Size = new System.Drawing.Size(1119, 22);
             this.PCT_SLIDER_X.TabIndex = 0;
             this.PCT_SLIDER_X.TabStop = false;
-            this.PCT_SLIDER_X.Click += new System.EventHandler(this.PCT_SLIDER_X_Click);
             this.PCT_SLIDER_X.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_X_MouseDown);
             this.PCT_SLIDER_X.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_X_MouseMove);
             this.PCT_SLIDER_X.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PCT_SLIDER_X_MoveUp);
@@ -185,11 +189,41 @@
             // 
             // BottomPanel
             // 
+            this.BottomPanel.Controls.Add(this.label1);
+            this.BottomPanel.Controls.Add(this.mouseY);
+            this.BottomPanel.Controls.Add(this.mouseX);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Location = new System.Drawing.Point(93, 409);
             this.BottomPanel.Name = "BottomPanel";
             this.BottomPanel.Size = new System.Drawing.Size(632, 31);
             this.BottomPanel.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(525, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "TIMER";
+            // 
+            // mouseY
+            // 
+            this.mouseY.AutoSize = true;
+            this.mouseY.Location = new System.Drawing.Point(90, 11);
+            this.mouseY.Name = "mouseY";
+            this.mouseY.Size = new System.Drawing.Size(63, 15);
+            this.mouseY.TabIndex = 1;
+            this.mouseY.Text = "Centroid Y";
+            // 
+            // mouseX
+            // 
+            this.mouseX.AutoSize = true;
+            this.mouseX.Location = new System.Drawing.Point(6, 11);
+            this.mouseX.Name = "mouseX";
+            this.mouseX.Size = new System.Drawing.Size(63, 15);
+            this.mouseX.TabIndex = 0;
+            this.mouseX.Text = "Centroid X";
             // 
             // RightPanel
             // 
@@ -199,6 +233,11 @@
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.Size = new System.Drawing.Size(63, 409);
             this.RightPanel.TabIndex = 11;
+            // 
+            // TIMER3
+            // 
+            this.TIMER3.Interval = 3000;
+            this.TIMER3.Tick += new System.EventHandler(this.TIMER3_Tick);
             // 
             // Form1
             // 
@@ -221,6 +260,8 @@
             this.LeftPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PCT_SLIDER_X)).EndInit();
             this.MiddlePanel.ResumeLayout(false);
+            this.BottomPanel.ResumeLayout(false);
+            this.BottomPanel.PerformLayout();
             this.RightPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -232,8 +273,6 @@
         private TreeView treeView1;
         private PictureBox PCT_CANVAS;
         private System.Windows.Forms.Timer TIMER;
-        private Button startRecording;
-        private System.Windows.Forms.Timer TIMER2;
         private BindingSource bindingSource1;
         private PictureBox PCT_SLIDER_Y;
         private Panel LeftPanel;
@@ -242,5 +281,11 @@
         private Panel MiddlePanel;
         private Panel BottomPanel;
         private Panel RightPanel;
+        public Button StartRecording;
+        public System.Windows.Forms.Timer TIMER3;
+        public System.Windows.Forms.Timer TIMER2;
+        private Label mouseX;
+        private Label mouseY;
+        private Label label1;
     }
 }

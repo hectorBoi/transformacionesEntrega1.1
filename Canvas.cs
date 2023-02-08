@@ -65,43 +65,28 @@ namespace transformacionesEntrega1._1
             pct.Invalidate();
         }
 
-        private void FastClear()
-        {
-            unsafe
-            {
-                BitmapData bitmapData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
-                int bytesPerPixel = System.Drawing.Bitmap.GetPixelFormatSize(bmp.PixelFormat) / 8;
-                int heightInPixels = bitmapData.Height;
-                int widthInBytes = bitmapData.Width * bytesPerPixel;
-                byte* PtrFirstPixel = (byte*)bitmapData.Scan0;
-
-                Parallel.For(0, heightInPixels, y =>
-                {
-                    byte* bits = PtrFirstPixel + (y * bitmapData.Stride);
-                    for (int x = 0; x < widthInBytes; x = x + bytesPerPixel)
-                    {
-                        bits[x + 0] = 0;// (byte)oldBlue;
-                        bits[x + 1] = 0;// (byte)oldGreen;
-                        bits[x + 2] = 0;// (byte)oldRed;
-                        bits[x + 3] = 0;// (byte)oldRed;
-                    }
-                });
-                bmp.UnlockBits(bitmapData);
-            }
-            pct.Invalidate();
-        }
+       
 
         public void Render(Scene scene)
         {
-            FastClear();
+            g.Clear(Color.Black);
             for (int f = 0; f < scene.Figures.Count; f++)
             {
+                for (int p = 0; p < scene.Figures[f].Pts.Count; p++)
+                {
+                    //Draws an Ellipse for each Point of the Figure f
+                    g.FillEllipse(Brushes.Violet, scene.Figures[f].Pts[p].X - 3, scene.Figures[f].Pts[p].Y - 3, 9, 9);
+
+                }
                 if (scene.Figures[f].Pts.Count > 1)
                 {
+
                     g.FillPolygon(Brushes.DarkSlateGray, scene.Figures[f].Pts.ToArray());
+
                     g.DrawPolygon(Pens.Goldenrod, scene.Figures[f].Pts.ToArray());
                     g.FillEllipse(Brushes.Violet, scene.Figures[f].Pts[scene.Figures[f].Pts.Count - 1].X - 3, scene.Figures[f].Pts[scene.Figures[f].Pts.Count - 1].Y - 3, 6, 6);
                     g.FillEllipse(Brushes.Yellow, scene.Figures[f].Centroid.X - 3, scene.Figures[f].Centroid.Y - 3, 6, 6);//*/
+
                 }
             }
             pct.Invalidate();
