@@ -5,8 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transformacionesEntrega1.1", "transformacionesEntrega1.1.csproj", "{4189C962-5A1B-46C8-B2F3-C1BBBA29CF24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pt2pt", "D:\hecto\Documents\Universidad\8th Semester\Graficación Teoria\Pt2pt\Pt2pt\Pt2pt.csproj", "{EBA5C281-4C75-41AF-A919-E72FAF7EC7D8}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
